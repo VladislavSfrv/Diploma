@@ -4,7 +4,7 @@ function MenuNavigator() {
 
             <div className="menu__header">
                 <div className="menu__header-logo">
-                    <img src="" alt="" />
+                    <img width={37} height={37} src="/src/assets/icons/logo.svg" alt="logo" />
                 </div>
                 <div className="menu__header-title">
                     <h1>Dashboard</h1>
@@ -15,12 +15,12 @@ function MenuNavigator() {
             </div>
 
             <ul className="menu__list">
-                <li className="menu__list-item">Dashboard</li>
-                <li className="menu__list-item">Product <span className="arrow-right"></span></li>
-                <li className="menu__list-item">Customers <span className="arrow-right"></span></li>
-                <li className="menu__list-item">Income <span className="arrow-right"></span></li>
-                <li className="menu__list-item">Promote <span className="arrow-right"></span></li>
-                <li className="menu__list-item">Help <span className="arrow-right"></span></li>
+                <li className="menu__list-item"><img src="/src/assets/icons/key-square.svg" alt="key" /> Dashboard</li>
+                <li className="menu__list-item"><img src="/src/assets/icons/d-square.svg" alt="" /> Product <span className="arrow-right"></span></li>
+                <li className="menu__list-item active"><img src="/src/assets/icons/user-square.svg" alt="" /> Customers <span className="arrow-right"></span></li>
+                <li className="menu__list-item"><img src="/src/assets/icons/wallet-square.svg" alt="" /> Income <span className="arrow-right"></span></li>
+                <li className="menu__list-item"><img src="/src/assets/icons/discount-square.svg" alt="" /> Promote <span className="arrow-right"></span></li>
+                <li className="menu__list-item"><img src="/src/assets/icons/help-square.svg" alt="" /> Help <span className="arrow-right"></span></li>
             </ul>
 
             <div className="menu__promo">
@@ -31,8 +31,8 @@ function MenuNavigator() {
             <div className="menu__profile">
                 <div className="menu__profile-photo"></div>
                 <div className="menu_profile-text">
-                    <h3 className="menu__profile-name"></h3>
-                    <p className="menu__profile-special"></p>
+                    <h3 className="menu__profile-name">Evano</h3>
+                    <p className="menu__profile-special">Project Manager</p>
                 </div>
                 <span className="arrow-down"></span>
             </div>
