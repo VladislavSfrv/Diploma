@@ -21,6 +21,25 @@
     list-style-type: none;
     font-family: "Poppins", sans-serif;
     color: #9197B3;
-    font-size: 14px; }
+    font-size: 14px;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 30vh; }
+    .menu__list-item {
+      width: 250px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      padding-left: 14px; }
+      .menu__list-item__text {
+        padding-left: 14px; }
+      .menu__list-item-active {
+        background-color: #5932EA;
+        border-radius: 8px;
+        color: #fff; }
+      .menu__list-item:hover {
+        cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

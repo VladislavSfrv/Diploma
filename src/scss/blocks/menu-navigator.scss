@@ -30,9 +30,32 @@
         font-family: "Poppins", sans-serif;
         color: #9197B3;
         font-size: 14px;
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding-bottom: 30vh;
 
         &-item{
-            
+            width: 250px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            padding-left: 14px;
+
+            &__text{
+                padding-left: 14px;
+            }
+
+            &-active{
+                background-color: #5932EA;
+                border-radius: 8px;
+                color: #fff;
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
         }
     }
 }
