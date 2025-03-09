@@ -22,7 +22,7 @@
     font-family: "Poppins", sans-serif;
     color: #9197B3;
     font-size: 14px;
-    height: 30vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -41,5 +41,45 @@
         color: #fff; }
       .menu__list-item:hover {
         cursor: pointer; }
+  .menu__promo {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-weight: bold;
+    background: linear-gradient(130deg, #EAABF0, #4623E9);
+    width: 250px;
+    height: 150px;
+    color: #fff;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    margin-left: 28px; }
+    .menu__promo-title {
+      padding: 34px 33px 10px 26px;
+      font-size: 14px; }
+    .menu__promo-button {
+      width: 203px;
+      height: 40px;
+      border-radius: 20px;
+      border: none;
+      color: #4925E9;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif; }
+      .menu__promo-button:hover {
+        cursor: pointer;
+        background-color: #4623E9;
+        color: #fff;
+        transition: background-color 0.3s ease; }
+  .menu__profile {
+    font-family: "Poppins", sans-serif;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    margin-top: 48px;
+    margin-left: 28px; }
+    .menu__profile-text {
+      padding-left: 12px; }
+      .menu__profile-text__name {
+        font-size: 14px; }
+      .menu__profile-text__special {
+        font-size: 12px;
+        color: #757575; }
 
 /*# sourceMappingURL=main.css.map */
