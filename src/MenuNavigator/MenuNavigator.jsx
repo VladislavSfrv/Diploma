@@ -15,10 +15,10 @@ function MenuNavigator() {
             </div>
 
             <ul className="menu__list">
-                <li className="menu__list-item"><img src="/src/assets/icons/key-square.svg" alt="key" /> <span className="menu__list-item__text">Dashboard</span></li>
+                <li className="menu__list-item menu__list-item-active"><img src="/src/assets/icons/key-square.svg" alt="key" /> <span className="menu__list-item__text">Dashboard</span></li>
                 <li className="menu__list-item"><img src="/src/assets/icons/d-square.svg" alt="" /> <span className="menu__list-item__text">Product</span> <span className="arrow-right">{`>`}</span></li>
                 <li className="menu__list-item"><img src="/src/assets/icons/user-square.svg" alt="" /> <span className="menu__list-item__text">Customers</span> <span className="arrow-right">{`>`}</span></li>
-                <li className="menu__list-item menu__list-item-active"><img src="/src/assets/icons/wallet-square.svg" alt="" /> <span className="menu__list-item__text">Income</span> <span className="arrow-right">{`>`}</span></li>
+                <li className="menu__list-item"><img src="/src/assets/icons/wallet-square.svg" alt="" /> <span className="menu__list-item__text">Income</span> <span className="arrow-right">{`>`}</span></li>
                 <li className="menu__list-item"><img src="/src/assets/icons/discount-square.svg" alt="" /> <span className="menu__list-item__text">Promote</span> <span className="arrow-right">{`>`}</span></li>
                 <li className="menu__list-item"><img src="/src/assets/icons/help-square.svg" alt="" /> <span className="menu__list-item__text">Help</span> <span className="arrow-right">{`>`}</span></li>
             </ul>

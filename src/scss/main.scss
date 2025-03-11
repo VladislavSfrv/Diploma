@@ -1,3 +1,8 @@
-
+#root{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
 
 @import "blocks/menu-navigator.scss";
+@import "blocks/dashboard.scss";
+@import "reset.scss";
