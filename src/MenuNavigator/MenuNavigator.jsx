@@ -1,4 +1,22 @@
+import { useState } from "react";
+import { Link } from 'react-router-dom';
+
+
 function MenuNavigator() {
+    const squareImageUrl = ["/src/assets/icons/key-square.svg",
+        "/src/assets/icons/d-square.svg",
+        "/src/assets/icons/user-square.svg",
+        "/src/assets/icons/wallet-square.svg",
+        "/src/assets/icons/discount-square.svg",
+        "/src/assets/icons/help-square.svg"
+    ]
+
+    const [activeItem, setActiveItem] = useState(0)
+
+    const handleClick = (index) =>{
+        setActiveItem(index)
+    }
+
     return (
         <nav className="menu">
 
@@ -15,13 +33,18 @@ function MenuNavigator() {
             </div>
 
             <ul className="menu__list">
-                <li className="menu__list-item menu__list-item-active"><img src="/src/assets/icons/key-square.svg" alt="key" /> <span className="menu__list-item__text">Dashboard</span></li>
-                <li className="menu__list-item"><img src="/src/assets/icons/d-square.svg" alt="" /> <span className="menu__list-item__text">Product</span> <span className="arrow-right">{`>`}</span></li>
-                <li className="menu__list-item"><img src="/src/assets/icons/user-square.svg" alt="" /> <span className="menu__list-item__text">Customers</span> <span className="arrow-right">{`>`}</span></li>
-                <li className="menu__list-item"><img src="/src/assets/icons/wallet-square.svg" alt="" /> <span className="menu__list-item__text">Income</span> <span className="arrow-right">{`>`}</span></li>
-                <li className="menu__list-item"><img src="/src/assets/icons/discount-square.svg" alt="" /> <span className="menu__list-item__text">Promote</span> <span className="arrow-right">{`>`}</span></li>
-                <li className="menu__list-item"><img src="/src/assets/icons/help-square.svg" alt="" /> <span className="menu__list-item__text">Help</span> <span className="arrow-right">{`>`}</span></li>
-            </ul>
+                {["Dashboard", "Product", "Customers", "Income", "Promote", "Help"].map((item, index) => (
+                    <Link to={index === 0 ? "/" : `/${index}`}>
+                        <li
+                            key={index}
+                            className={`menu__list-item ${activeItem === index ? "menu__list-item-active" : ""}`}
+                            onClick={() => handleClick(index)}>
+                            <img src={squareImageUrl[index]} alt="" /> 
+                            <span className="menu__list-item__text">{item}</span>
+                        </li>
+                    </Link>
+                ))}
+                </ul>
 
             <div className="menu__promo">
                 <h2 className="menu__promo-title">Upgrade to  PRO to get access all Features!</h2>

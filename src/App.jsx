@@ -8,10 +8,10 @@ function App() {
 
   return (
     <>
-    <MenuNavigator/>
       <BrowserRouter>
+        <MenuNavigator />
         <Routes>
-          <Route path='/' element={<Dashboard/>}></Route>
+          <Route path='/' element={<Dashboard />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,4 +1,21 @@
+import { useState } from "react"
+
 function Dashboard() {
+    //  состояния для кнопок активного и неактивного клиента
+    const textActiveButton = { active: "Active", inactive: "Inactive" }
+    const [activeButton1, setActiveButton1] = useState(localStorage.getItem("activeButton1") != null ? JSON.parse(localStorage.getItem("activeButton1")) : true)
+    const [activeButton2, setActiveButton2] = useState(localStorage.getItem("activeButton2") != null ? JSON.parse(localStorage.getItem("activeButton2")) : true)
+    const [activeButton3, setActiveButton3] = useState(localStorage.getItem("activeButton3") != null ? JSON.parse(localStorage.getItem("activeButton3")) : true)
+    const [activeButton4, setActiveButton4] = useState(localStorage.getItem("activeButton4") != null ? JSON.parse(localStorage.getItem("activeButton4")) : true)
+    const [activeButton5, setActiveButton5] = useState(localStorage.getItem("activeButton5") != null ? JSON.parse(localStorage.getItem("activeButton5")) : true)
+    const [activeButton6, setActiveButton6] = useState(localStorage.getItem("activeButton6") != null ? JSON.parse(localStorage.getItem("activeButton6")) : true)
+
+    // переключение состояния кнопки и добавление в локальное хранилище браузера
+    const handleActiveButton = (button, setButton, buttonId) => {
+        setButton(!button)
+        localStorage.setItem(`activeButton${buttonId}`, JSON.stringify(!button))
+    }
+
     return (
         <main className="dashboard">
             <div className="dashboard__header">
@@ -96,122 +113,152 @@ function Dashboard() {
                 <div className="customers__data">
                     <div className="customers__data-info">
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Jane Cooper</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Microsoft</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>(225) 555-0118</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>jane@microsoft.com</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>United States</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <button className="customers__data-info-item-button button__active">Active</button>
-                        </div>
-                    </div>
-                    <div className="customers__data-info">
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <button className="customers__data-info-item-button button__inactive">Inactive</button>
+                            {
+                                <button
+                                    onClick={() => handleActiveButton(activeButton1, setActiveButton1, 1)}
+                                    className={`customers__data-info-item-button ${activeButton1 ? "button__active" : "button__inactive"}`}>{activeButton1 ? textActiveButton.active : textActiveButton.inactive}
+                                </button>
+                            }
                         </div>
                     </div>
                     <div className="customers__data-info">
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Floyd Miles</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Yahoo</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>(205) 555-0100</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>floyd@yahoo.com</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Kiribati</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <button className="customers__data-info-item-button button__active">Active</button>
-                        </div>
-                    </div>
-                    <div className="customers__data-info">
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <p>user</p>
-                        </div>
-                        <div className="customers__data-info-item">
-                            <button className="customers__data-info-item-button button__active">Active</button>
+                            {
+                                <button
+                                    onClick={() => handleActiveButton(activeButton2, setActiveButton2, 2)}
+                                    className={`customers__data-info-item-button ${activeButton2 ? "button__active" : "button__inactive"}`}>{activeButton2 ? textActiveButton.active : textActiveButton.inactive}
+                                </button>
+                            }
                         </div>
                     </div>
                     <div className="customers__data-info">
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Ronald Richards</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Adobe</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>(302) 555-0107</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>ronald@adobe.com</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Israel</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <button className="customers__data-info-item-button button__active">Active</button>
+                            {
+                                <button
+                                    onClick={() => handleActiveButton(activeButton3, setActiveButton3, 3)}
+                                    className={`customers__data-info-item-button ${activeButton3 ? "button__active" : "button__inactive"}`}>{activeButton3 ? textActiveButton.active : textActiveButton.inactive}
+                                </button>
+                            }
                         </div>
                     </div>
                     <div className="customers__data-info">
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Marvin McKinney</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Tesla</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>(252) 555-0126</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>marvin@tesla.com</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <p>user</p>
+                            <p>Iran</p>
                         </div>
                         <div className="customers__data-info-item">
-                            <button className="customers__data-info-item-button button__active">Active</button>
+                            {
+                                <button
+                                    onClick={() => handleActiveButton(activeButton4, setActiveButton4, 4)}
+                                    className={`customers__data-info-item-button ${activeButton4 ? "button__active" : "button__inactive"}`}>{activeButton4 ? textActiveButton.active : textActiveButton.inactive}
+                                </button>
+                            }
+                        </div>
+                    </div>
+                    <div className="customers__data-info">
+                        <div className="customers__data-info-item">
+                            <p>Jerome Bell</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>Google</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>(629) 555-0129</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>jerome@google.com</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>Réunion</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            {
+                                <button
+                                    onClick={() => handleActiveButton(activeButton5, setActiveButton5, 5)}
+                                    className={`customers__data-info-item-button ${activeButton5 ? "button__active" : "button__inactive"}`}>{activeButton5 ? textActiveButton.active : textActiveButton.inactive}
+                                </button>
+                            }
+                        </div>
+                    </div>
+                    <div className="customers__data-info">
+                        <div className="customers__data-info-item">
+                            <p>Kathryn Murphy</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>Microsoft</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>(406) 555-0120</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>kathryn@microsoft.com</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            <p>Curaçao</p>
+                        </div>
+                        <div className="customers__data-info-item">
+                            {
+                                <button
+                                    onClick={() => handleActiveButton(activeButton6, setActiveButton6, 6)}
+                                    className={`customers__data-info-item-button ${activeButton6 ? "button__active" : "button__inactive"}`}>{activeButton6 ? textActiveButton.active : textActiveButton.inactive}
+                                </button>
+                            }
                         </div>
                     </div>
                 </div>
